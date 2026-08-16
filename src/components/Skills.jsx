@@ -4,7 +4,7 @@ import {
   SiReact, SiJavascript, SiNodedotjs, SiPython, SiTypescript,
   SiTailwindcss, SiMongodb, SiPostgresql,
   SiGit, SiFirebase, SiNextdotjs, SiExpress,
-  SiAmazonwebservices, SiSocketdotio, SiNestjs, SiDocker, SiSupabase,
+  SiAmazonwebservices, SiGooglecloud, SiSocketdotio, SiNestjs, SiDocker, SiSupabase,
   SiCplusplus, SiMysql, SiPostman,
 } from 'react-icons/si'
 import { FaReact } from 'react-icons/fa'
@@ -26,6 +26,7 @@ const allSkills = [
   { name: 'Supabase', icon: <SiSupabase />, color: '#3ecf8e' },
   { name: 'Socket.io', icon: <SiSocketdotio />, color: '#94a3b8' },
   { name: 'AWS', icon: <SiAmazonwebservices />, color: '#ff9900' },
+  { name: 'GCP', icon: <SiGooglecloud />, color: '#4285f4' },
   { name: 'Docker', icon: <SiDocker />, color: '#2496ed' },
   { name: 'Git', icon: <SiGit />, color: '#f05032' },
   { name: 'C++', icon: <SiCplusplus />, color: '#00599c' },

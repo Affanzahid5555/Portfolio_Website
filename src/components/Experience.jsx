@@ -13,13 +13,14 @@ const Experience = () => {
       description:
         'Full-time software engineer building production web platforms for international business clients with React.js, Next.js, and Node.js—including microservices-based backends with NestJS and PostgreSQL on AWS, and direct client communication across time zones.',
       achievements: [
+        'Built Entry Club—a multi-tenant fitness management platform for Saudi Arabia with QR check-in, WhatsApp, multi-location support, and PDPL-compliant access',
+        'Led Ishout—an AI-powered influencer marketing platform with campaign briefing, instant creator matching, and brand collaboration workflows',
+        'Delivered Tawabiq—a real estate platform with marketplace, broker, and admin portals (map search, geolocation, SSR, and enterprise moderation)',
         'Develop and maintain full-stack web applications using React.js, Next.js, and Node.js for production-level business clients',
         'Build responsive, component-driven interfaces with RESTful APIs, authentication, admin panels, role-based access control, and Stripe integrations',
-        'Design microservices-based backends with NestJS and PostgreSQL deployed on AWS',
         'Accelerate delivery with AI-assisted tools (Claude Code, Cursor) while maintaining code quality through structured prompt engineering',
-        'Communicate directly with clients to gather requirements, present demos, and translate business needs into reliable technical solutions',
       ],
-      technologies: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'Python', 'PostgreSQL', 'MongoDB', 'AWS', 'Stripe'],
+      technologies: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'Python', 'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Stripe'],
       color: '#7c3aed',
     },
     {

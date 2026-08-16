@@ -289,8 +289,8 @@ const Hero = () => {
               {...fadeUp(0.75)}
               style={{ fontSize: '1.05rem', color: 'var(--gray)', lineHeight: 1.85, maxWidth: '540px' }}
             >
-              Software Engineer · MERN stack · React Native—2 years shipping scalable web and mobile
-              apps for international clients across SaaS, real estate, and social platforms.
+              Software Engineer · MERN stack · React Native—3 years shipping scalable web and mobile
+              apps for international clients across SaaS, real estate, healthcare, and social platforms.
             </motion.p>
           </div>
 
