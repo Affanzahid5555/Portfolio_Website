@@ -1,262 +1,95 @@
 import { motion } from 'framer-motion'
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi'
-import SectionMeta from './SectionMeta'
+import { CV_CACHE_BUST, CV_URL } from '../cvAsset'
+
+const jobs = [
+  {
+    period: '2025 to Present',
+    title: 'Software Engineer',
+    company: 'Techtimize',
+    href: '#',
+    description:
+      'Own end to end delivery of full stack production web apps for business clients. NestJS and PostgreSQL microservices on AWS with React and Next.js frontends, auth, admin panels, RBAC, and Stripe. Primary client facing engineer across time zones.',
+    tech: ['React', 'Next.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'AWS', 'Stripe'],
+  },
+  {
+    period: '2023 to 2026',
+    title: 'MERN Stack Developer',
+    company: '360HR',
+    href: 'https://360hr.io/',
+    description:
+      'Architected an enterprise job portal and ATS on the MERN stack: job posting, candidate search, pipelines, recruiter analytics, JWT RBAC, and MongoDB performance work for large datasets.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+  },
+  {
+    period: '2024 to 2025',
+    title: 'Software Engineer',
+    company: 'Euphoria XR',
+    href: '#',
+    description:
+      'Owned a production React Native social app with location discovery, real time Socket.io chat, profiles, events, and a Node/MongoDB backend including reels based job discovery.',
+    tech: ['React Native', 'Node.js', 'Socket.io', 'MongoDB'],
+  },
+]
 
 const Experience = () => {
-  const experiences = [
-    {
-      type: 'fulltime',
-      title: 'Software Engineer',
-      company: 'Techtimize',
-      location: 'Lahore, Pakistan · On-site',
-      period: 'Oct 2025 – Present',
-      description:
-        'Own end to end delivery of full stack production web applications for business clients, architecting microservices based backends with NestJS and PostgreSQL and deploying to AWS alongside React.js and Next.js frontends.',
-      achievements: [
-        'Architect responsive, component driven interfaces backed by RESTful APIs, authentication, admin panels, role based access control, and Stripe payment integrations',
-        'Built Entry Club, a multi-tenant fitness management platform with QR check in, WhatsApp, multi location support, and PDPL compliant access',
-        'Led Ishout, an AI powered influencer marketing platform with campaign briefing, creator matching, and brand collaboration workflows',
-        'Delivered Tawabiq, a real estate platform with marketplace, broker, and admin portals including map search, geolocation, SSR, and enterprise moderation',
-        'Accelerate delivery with AI assisted tools (Claude Code, Cursor) while acting as primary client facing engineer across time zones',
-      ],
-      technologies: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Stripe'],
-      color: '#7c3aed',
-    },
-    {
-      type: 'parttime',
-      title: 'MERN Stack Developer',
-      company: '360HR',
-      location: 'Remote · Part-time / Contract',
-      period: 'Aug 2023 – Jan 2026',
-      description:
-        'Own the end to end architecture and development of an enterprise job portal and applicant tracking system (ATS) on the MERN stack, covering job posting, candidate search, applicant pipelines, and recruiter analytics.',
-      achievements: [
-        'Design and secure RESTful APIs with Node.js and Express.js for job workflows, applications, and notifications',
-        'Implement JWT based role based access across admin, recruiter, and applicant roles',
-        'Engineer performant MongoDB schemas, aggregation pipelines, and indexing for fast search across large candidate datasets',
-        'Integrate email notifications, resume uploads, and reporting; lead requirement discussions and sprint demos with international stakeholders',
-      ],
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs'],
-      color: '#2563eb',
-    },
-    {
-      type: 'fulltime',
-      title: 'Software Engineer',
-      company: 'Euphoria XR',
-      location: 'Lahore, Pakistan · On-site',
-      period: 'Jun 2024 – Oct 2025',
-      description:
-        'Owned development of a production React Native social app end to end, delivering location based discovery, real time chat, friend management, user profiles, and event workflows to a live user base.',
-      achievements: [
-        'Architected a scalable real time chat module with Socket.io for reliable delivery, presence tracking, and low latency messaging',
-        'Built and maintained the Node.js and MongoDB backend, including a reels based discovery feature for browsing and applying to jobs',
-        'Integrated RESTful APIs powering core app features, user data, events, and real time communication',
-      ],
-      technologies: ['React Native', 'React', 'Node.js', 'Socket.io', 'REST APIs', 'MongoDB'],
-      color: '#3b82f6',
-    },
-  ]
-
   return (
-    <section id="experience" className="section" style={{ position: 'relative' }}>
-      <div className="section-num">03</div>
-      <div className="glow" style={{ bottom: '20%', left: '-300px' }} />
-
-      <SectionMeta label="03 — Experience" />
-
+    <section id="experience" className="bc-section">
       <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 30 }}
+        className="bc-section-label"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
-        Work Experience
+        Experience
       </motion.h2>
 
-      <motion.div
-        className="section-divider"
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-      />
-
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
-        Professional roles matching my CV and Upwork profile
-      </motion.p>
-
-      <div
-        className="experience-timeline"
-        style={{
-          position: 'relative',
-          paddingLeft: '40px',
-          marginTop: '60px',
-        }}
-      >
-        <motion.div
-          className="experience-timeline-line"
-          initial={{ scaleY: 0 }}
-          whileInView={{ scaleY: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
-          style={{
-            position: 'absolute',
-            left: '18px',
-            top: 0,
-            bottom: 0,
-            width: '3px',
-            background: 'var(--gradient-1)',
-            borderRadius: '3px',
-            transformOrigin: 'top',
-          }}
-        />
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '55px' }}>
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.7 }}
-              style={{ position: 'relative' }}
+      <ol className="bc-exp-list">
+        {jobs.map((job, index) => (
+          <motion.li
+            key={job.company + job.period}
+            initial={{ opacity: 0, y: 32, x: -8 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            viewport={{ once: false, amount: 0.25 }}
+            transition={{ delay: index * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              className="bc-exp-card"
+              href={job.href === '#' ? undefined : job.href}
+              target={job.href !== '#' ? '_blank' : undefined}
+              rel={job.href !== '#' ? 'noopener noreferrer' : undefined}
+              onClick={job.href === '#' ? (e) => e.preventDefault() : undefined}
             >
-              <motion.div
-                className="experience-dot"
-                whileInView={{ scale: [0, 1.3, 1] }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 + 0.2, duration: 0.5 }}
-                style={{
-                  position: 'absolute',
-                  left: '-52px',
-                  top: '12px',
-                  width: '38px',
-                  height: '38px',
-                  borderRadius: '50%',
-                  background: `linear-gradient(135deg, ${exp.color}, ${exp.color}cc)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '1.1rem',
-                  color: 'var(--white)',
-                  boxShadow: `0 0 20px ${exp.color}70, 0 0 40px ${exp.color}30`,
-                  zIndex: 2,
-                  border: '4px solid var(--dark)',
-                }}
-              >
-                <FiBriefcase />
-              </motion.div>
-
-              <motion.div
-                className="card experience-content"
-                whileHover={{ y: -6 }}
-                style={{
-                  padding: '38px',
-                  marginLeft: '20px',
-                  borderLeft: `3px solid ${exp.color}30`,
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'space-between',
-                    flexWrap: 'wrap',
-                    gap: '16px',
-                    marginBottom: '22px',
-                  }}
-                >
-                  <div>
-                    <h3 style={{ fontSize: '1.55rem', fontWeight: 700, marginBottom: '8px' }}>
-                      {exp.title}
-                    </h3>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '10px' }}>
-                      <span style={{ color: exp.color, fontWeight: 700, fontSize: '1.05rem' }}>
-                        {exp.company}
-                      </span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'var(--gray)', fontSize: '0.9rem' }}>
-                        <FiMapPin size={13} /> {exp.location}
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: `${exp.color}15`,
-                      border: `1px solid ${exp.color}30`,
-                      borderRadius: '20px',
-                      padding: '6px 16px',
-                      color: exp.color,
-                      fontSize: '0.88rem',
-                      fontWeight: 600,
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    <FiCalendar size={14} />
-                    {exp.period}
-                  </div>
-                </div>
-
-                <p style={{ color: 'var(--gray)', lineHeight: 1.75, marginBottom: '22px', fontSize: '1rem' }}>
-                  {exp.description}
-                </p>
-
-                <div style={{ marginBottom: '22px' }}>
-                  <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '12px', color: 'var(--light)' }}>
-                    Key Achievements
-                  </h4>
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '9px' }}>
-                    {exp.achievements.map((ach, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
-                        style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', color: 'var(--gray)', fontSize: '0.95rem' }}
-                      >
-                        <span style={{ color: exp.color, fontSize: '1rem', marginTop: '2px', flexShrink: 0 }}>✦</span>
-                        <span>{ach}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                  {exp.technologies.map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      whileHover={{ y: -3, scale: 1.05 }}
-                      style={{
-                        padding: '5px 14px',
-                        background: `${exp.color}12`,
-                        border: `1px solid ${exp.color}30`,
-                        borderRadius: '20px',
-                        fontSize: '0.82rem',
-                        color: exp.color,
-                        fontWeight: 600,
-                        cursor: 'default',
-                        transition: 'all 0.2s ease',
-                      }}
-                    >
-                      {tech}
-                    </motion.span>
+              <div className="bc-exp-period">{job.period}</div>
+              <div className="bc-exp-body">
+                <h3 className="bc-exp-title">
+                  {job.title} · <span>{job.company}</span>
+                </h3>
+                <p>{job.description}</p>
+                <ul className="bc-tech-list">
+                  {job.tech.map((t) => (
+                    <li key={t}>{t}</li>
                   ))}
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+                </ul>
+              </div>
+            </a>
+          </motion.li>
+        ))}
+      </ol>
+
+      <motion.a
+        className="bc-text-link"
+        href={`${CV_URL}?v=${CV_CACHE_BUST}`}
+        download="Affan_Zahid_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.45 }}
+      >
+        View Full Résumé →
+      </motion.a>
     </section>
   )
 }

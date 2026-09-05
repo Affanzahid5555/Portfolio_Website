@@ -41,10 +41,10 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="section" style={{ position: 'relative' }}>
-      <div className="section-num">05</div>
+      <div className="section-num">06</div>
       <div className="glow" style={{ top: '50%', left: '-300px', transform: 'translateY(-50%)', background: 'radial-gradient(circle,rgba(var(--glow-rgb),0.2) 0%,transparent 70%)' }} />
 
-      <SectionMeta label="05 — Reviews" />
+      <SectionMeta label="06 — Reviews" />
 
       <motion.h2
         className="section-title"

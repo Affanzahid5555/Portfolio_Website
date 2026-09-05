@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiMenu, FiX } from 'react-icons/fi'
+import { useTheme } from '../context/ThemeContext'
 
 const Header = ({ scrollY }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [isMobile, setIsMobile] = useState(false)
+  const { isDark } = useTheme()
 
   const navItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Experience', id: 'experience' },
+    { name: 'Certs', id: 'certifications' },
     { name: 'Projects', id: 'projects' },
     { name: 'Reviews', id: 'reviews' },
     { name: 'Contact', id: 'contact' },
@@ -74,16 +77,18 @@ const Header = ({ scrollY }) => {
         right: 0,
         zIndex: 1000,
         background: scrolled
-          ? 'rgba(8, 8, 8, 0.97)'
-          : 'rgba(8, 8, 8, 0.6)',
+          ? 'var(--header-bg-scrolled)'
+          : 'var(--header-bg)',
         backdropFilter: isMobile ? 'none' : 'blur(16px)',
         WebkitBackdropFilter: isMobile ? 'none' : 'blur(16px)',
         transition: 'all 0.4s ease',
         borderBottom: scrolled
-          ? '1px solid rgba(var(--glow-rgb), 0.15)'
+          ? '1px solid var(--border-subtle)'
           : '1px solid transparent',
         boxShadow: scrolled
-          ? '0 4px 30px rgba(0, 0, 0, 0.4)'
+          ? isDark
+            ? '0 4px 30px rgba(0, 0, 0, 0.35)'
+            : '0 4px 24px rgba(15, 23, 42, 0.06)'
           : 'none',
       }}
     >

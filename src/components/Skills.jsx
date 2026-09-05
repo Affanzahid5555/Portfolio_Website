@@ -12,7 +12,7 @@ import { FaReact, FaLayerGroup, FaServer } from 'react-icons/fa'
 const allSkills = [
   { name: 'Full-Stack', icon: <FaLayerGroup />, color: '#14a800' },
   { name: 'React', icon: <SiReact />, color: '#61dafb' },
-  { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
+  { name: 'Next.js', icon: <SiNextdotjs />, color: '#64748b' },
   { name: 'React Native', icon: <FaReact />, color: '#61dafb' },
   { name: 'TypeScript', icon: <SiTypescript />, color: '#3178c6' },
   { name: 'JavaScript', icon: <SiJavascript />, color: '#f7df1e' },

@@ -148,13 +148,15 @@ const Hero = () => {
             borderBottom: '1px solid rgba(255,255,255,0.06)',
             marginBottom: '52px',
             overflow: 'hidden',
+            gap: '12px',
+            flexWrap: 'wrap',
           }}
         >
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-            style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(148,163,184,0.45)' }}
+            style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gray)' }}
           >
             Portfolio 2026
           </motion.span>
@@ -165,8 +167,8 @@ const Hero = () => {
             style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
           >
             <span className="status-dot" />
-            <span style={{ fontSize: '0.72rem', letterSpacing: '0.1em', color: 'rgba(148,163,184,0.45)' }}>
-              Available for work
+            <span style={{ fontSize: '0.72rem', letterSpacing: '0.06em', color: 'var(--gray)' }}>
+              Open to contracts · 30+ hrs/week · Lahore (PKT)
             </span>
           </motion.div>
         </div>
@@ -303,8 +305,24 @@ const Hero = () => {
               style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}
             >
               <motion.a
-                href="#projects"
+                href="https://www.upwork.com/freelancers/~01dabd00704ad7f10b?mp_source=share"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                style={{
+                  background: 'transparent',
+                  color: '#14a800',
+                  border: '1px solid #14a800',
+                  boxShadow: 'none',
+                }}
+              >
+                <FiBriefcase /> Hire on Upwork
+              </motion.a>
+              <motion.a
+                href="#projects"
+                className="btn btn-outline"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -333,7 +351,7 @@ const Hero = () => {
 
             {/* Social links */}
             <motion.div {...fadeUp(0.9)} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <span style={{ color: 'rgba(148,163,184,0.45)', fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+              <span style={{ color: 'var(--gray)', fontSize: '0.72rem', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
                 Connect
               </span>
               <div style={{ display: 'flex', gap: '12px' }}>
