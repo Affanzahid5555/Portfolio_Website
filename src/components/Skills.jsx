@@ -2,28 +2,32 @@ import { motion } from 'framer-motion'
 import SectionMeta from './SectionMeta'
 import {
   SiReact, SiJavascript, SiNodedotjs, SiPython, SiTypescript,
-  SiTailwindcss, SiMongodb, SiPostgresql,
-  SiGit, SiFirebase, SiNextdotjs, SiExpress,
+  SiTailwindcss, SiMongodb, SiPostgresql, SiRedux,
+  SiGit, SiFirebase, SiNextdotjs, SiExpress, SiOpenai,
   SiAmazonwebservices, SiGooglecloud, SiSocketdotio, SiNestjs, SiDocker, SiSupabase,
   SiCplusplus, SiMysql, SiPostman,
 } from 'react-icons/si'
-import { FaReact } from 'react-icons/fa'
+import { FaReact, FaLayerGroup, FaServer } from 'react-icons/fa'
 
 const allSkills = [
+  { name: 'Full-Stack', icon: <FaLayerGroup />, color: '#14a800' },
   { name: 'React', icon: <SiReact />, color: '#61dafb' },
-  { name: 'React Native', icon: <FaReact />, color: '#61dafb' },
   { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff' },
-  { name: 'JavaScript', icon: <SiJavascript />, color: '#f7df1e' },
+  { name: 'React Native', icon: <FaReact />, color: '#61dafb' },
   { name: 'TypeScript', icon: <SiTypescript />, color: '#3178c6' },
+  { name: 'JavaScript', icon: <SiJavascript />, color: '#f7df1e' },
+  { name: 'Redux', icon: <SiRedux />, color: '#764abc' },
   { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06b6d4' },
   { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
   { name: 'NestJS', icon: <SiNestjs />, color: '#E0234E' },
   { name: 'Express', icon: <SiExpress />, color: '#94a3b8' },
+  { name: 'REST API', icon: <FaServer />, color: '#0ea5e9' },
   { name: 'Python', icon: <SiPython />, color: '#3776ab' },
   { name: 'MongoDB', icon: <SiMongodb />, color: '#47a248' },
   { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791' },
   { name: 'Firebase', icon: <SiFirebase />, color: '#ffca28' },
   { name: 'Supabase', icon: <SiSupabase />, color: '#3ecf8e' },
+  { name: 'OpenAI API', icon: <SiOpenai />, color: '#10a37f' },
   { name: 'Socket.io', icon: <SiSocketdotio />, color: '#94a3b8' },
   { name: 'AWS', icon: <SiAmazonwebservices />, color: '#ff9900' },
   { name: 'GCP', icon: <SiGooglecloud />, color: '#4285f4' },
@@ -105,7 +109,7 @@ const Skills = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Technologies and tools I use to bring ideas to life
+        Technologies I use on Upwork and in production: React, Next.js, React Native, Node.js, AI, and more
       </motion.p>
 
       <motion.div
@@ -143,7 +147,7 @@ const Skills = () => {
               boxShadow: '0 0 12px rgba(var(--glow-rgb), 0.35)',
             }} />
             <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--gray)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Frontend & Mobile
+              Full Stack, Frontend & Mobile
             </span>
           </motion.div>
           <MarqueeRow skills={row1} direction="left" speed={28} />
@@ -171,7 +175,7 @@ const Skills = () => {
               boxShadow: '0 0 12px rgba(var(--glow-rgb), 0.28)',
             }} />
             <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--gray)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Backend & Databases
+              Backend, APIs & Databases
             </span>
           </motion.div>
           <MarqueeRow skills={row2} direction="right" speed={32} />
@@ -199,7 +203,7 @@ const Skills = () => {
               boxShadow: '0 0 12px rgba(var(--glow-rgb), 0.22)',
             }} />
             <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--gray)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Cloud & DevOps
+              AI, Cloud & DevOps
             </span>
           </motion.div>
           <MarqueeRow skills={row3} direction="left" speed={24} />

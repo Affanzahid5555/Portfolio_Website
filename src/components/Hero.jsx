@@ -9,11 +9,11 @@ import profileImage from '../assets/images/profile.jpeg'
 import { CV_CACHE_BUST, CV_URL } from '../cvAsset'
 
 const roles = [
-  'Software Engineer',
-  'MERN Stack Developer',
+  'Full-Stack Developer',
+  'React, Next.js & AI',
+  'Web + Mobile Developer',
   'React Native Developer',
-  'Full Stack Developer',
-  'React & Node.js Developer',
+  'Node.js Developer',
 ]
 
 const techIcons = [
@@ -156,7 +156,7 @@ const Hero = () => {
             transition={{ delay: 0.1, duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
             style={{ fontSize: '0.72rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(148,163,184,0.45)' }}
           >
-            Portfolio — 2026
+            Portfolio 2026
           </motion.span>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -289,8 +289,9 @@ const Hero = () => {
               {...fadeUp(0.75)}
               style={{ fontSize: '1.05rem', color: 'var(--gray)', lineHeight: 1.85, maxWidth: '540px' }}
             >
-              Software Engineer · MERN stack · React Native—3 years shipping scalable web and mobile
-              apps for international clients across SaaS, real estate, healthcare, and social platforms.
+              Build end to end web and mobile apps in React, Next.js, React Native, and Node.js,
+              including AI features. I take product vision to launch with high performance, clean UI,
+              APIs, databases, payments, real time features, and deployment.
             </motion.p>
           </div>
 

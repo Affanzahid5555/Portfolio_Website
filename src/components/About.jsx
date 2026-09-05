@@ -134,24 +134,25 @@ const About = () => {
               lineHeight: 1.22,
             }}
           >
-            Building Scalable Solutions with{' '}
-            <span className="gradient-text">Innovation & Excellence</span>
+            Full Stack Developer for{' '}
+            <span className="gradient-text">Web, Mobile & AI</span>
           </motion.h3>
 
           <motion.div className="about-bio" variants={bioStagger}>
             {[
-              `I'm a results-driven Software Engineer based in Lahore, Pakistan, with 3 years of experience architecting multi-tenant SaaS platforms, real-time systems, and production web/mobile apps for international clients across SaaS, real estate, healthcare, and social platforms.`,
-              <>I deliver end-to-end solutions—from requirement gathering through production—with strengths in responsive UIs, REST APIs, Socket.io, NestJS, PostgreSQL, MongoDB, AWS, and GCP. I also leverage AI-assisted tools (Claude Code, Cursor) to ship high-quality features faster.</>,
+              `Software Engineer with 3+ years of experience architecting multi-tenant SaaS platforms, real time systems, and production web and mobile apps for international clients across SaaS, real estate, healthcare, hospitality, and social platforms.`,
+              <>I build end to end products in React, Next.js, React Native, and Node.js, including AI features. Strong focus on clean architecture, high performance backends, REST APIs, payments, and deployment on AWS and GCP.</>,
               <>
-                Previously at{' '}
-                <strong style={{ color: 'var(--primary)' }}>Euphoria XR</strong> (Jun 2024 – Oct 2025) on a production React Native app, and{' '}
-                <strong style={{ color: 'var(--primary)' }}>360HR</strong> (Aug 2023 – Jan 2026) as MERN Stack Developer.
+                Currently Software Engineer at{' '}
+                <strong style={{ color: 'var(--primary)' }}>Techtimize</strong> (Oct 2025 – Present). Also delivered production work at{' '}
+                <strong style={{ color: 'var(--primary)' }}>Euphoria XR</strong> (Jun 2024 – Oct 2025) and{' '}
+                <strong style={{ color: 'var(--primary)' }}>360HR</strong> (Aug 2023 – Jan 2026).
               </>,
               <>
-                Selected work includes a published <strong style={{ color: 'var(--primary)' }}>HealthCare Companion</strong> app, company platforms{' '}
-                <strong style={{ color: 'var(--primary)' }}>Entry Club</strong>, <strong style={{ color: 'var(--primary)' }}>Ishout</strong>, and{' '}
-                <strong style={{ color: 'var(--primary)' }}>Tawabiq</strong>,{' '}
-                <strong style={{ color: 'var(--primary)' }}>360HR</strong>, and more—see{' '}
+                Featured work clients see on Upwork includes{' '}
+                <strong style={{ color: 'var(--primary)' }}>Entry Club</strong> (multi-tenant fitness SaaS),{' '}
+                <strong style={{ color: 'var(--primary)' }}>Tawabiq</strong> (real estate marketplace), and{' '}
+                <strong style={{ color: 'var(--primary)' }}>360HR</strong>, plus published apps and AI platforms. See{' '}
                 <a href="#projects" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: '3px' }}>Projects</a>.
               </>,
             ].map((text, i) => (
@@ -160,7 +161,7 @@ const About = () => {
               </motion.p>
             ))}
             <motion.p variants={itemVariants} className="about-bio-p about-bio-education">
-              <strong>Education:</strong> Bachelor of Science in Computer Science, University of Lahore (Sep 2020 – Jul 2024).
+              <strong>Education:</strong> B.S. in Computer Science, University of Lahore (Sep 2020 – Jul 2024).
             </motion.p>
           </motion.div>
 

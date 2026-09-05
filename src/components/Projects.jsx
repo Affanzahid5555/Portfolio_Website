@@ -12,6 +12,8 @@ import healthcareImg from '../assets/images/assets/Artificial-image.jpg'
 import entryClubImg from '../assets/images/assets/entry-club.png'
 import tawabiqImg from '../assets/images/assets/tawabiq.png'
 import ishoutImg from '../assets/images/assets/ishout.png'
+import codingImg from '../assets/images/assets/coding-image.jpg'
+import webAppImg from '../assets/images/assets/Web-app-development.jpg'
 
 const ProjectCard = ({ project, index, isMobile }) => (
   <motion.div
@@ -167,21 +169,109 @@ const Projects = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  // Upwork portfolio showcase (matches profile + CV)
+  const upworkProjects = [
+    {
+      title: 'Entry Club',
+      description:
+        'Multi-tenant fitness SaaS platform built end to end with Next.js, NestJS, and React Native. Member management, class scheduling, QR check in, WhatsApp integration, OAuth, payment gateways, multi location support, and PDPL compliant access.',
+      image: entryClubImg,
+      imageFit: 'cover',
+      tags: ['Fitness SaaS', 'Next.js', 'NestJS', 'React Native'],
+      featured: true,
+      badge: 'Upwork Portfolio',
+      gradient: 'linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%)',
+      accentColor: '#818cf8',
+    },
+    {
+      title: 'Tawabiq',
+      description:
+        'Real estate marketplace and management platform with AI ready full stack architecture. Public marketplace with map and geolocation search, broker CRM (leads, appointments, commissions), and enterprise admin with SSR, moderation, reporting, and audit logs.',
+      image: tawabiqImg,
+      imageFit: 'cover',
+      tags: ['Real Estate', 'Next.js', 'NestJS', 'PostgreSQL', 'AI Features'],
+      featured: true,
+      badge: 'Upwork Portfolio',
+      gradient: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)',
+      accentColor: '#0d9488',
+    },
+    {
+      title: '360HR',
+      description:
+        'B2B recruiting and HR management SaaS with role based dashboards for recruiters, HR, and candidates. Job postings, pipelines, interview scheduling, onboarding, attendance, and a career portal tying recruiting and HR ops into one system.',
+      image: hrImg,
+      tags: ['HR & SaaS', 'React', 'Node.js', 'MongoDB'],
+      link: 'https://360hr.io/',
+      featured: true,
+      badge: 'Upwork Portfolio',
+      gradient: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)',
+      accentColor: '#3b82f6',
+    },
+  ]
+
   const liveProjects = [
     {
       title: 'HealthCare Companion',
       description:
-        'Published cross-platform React Native healthcare app (Google Play & Apple App Store) with Firebase Auth, Firestore, and FCM, plus an admin panel. Guided onboarding into health courses, XP/streaks, achievement badges, progress dashboards, Sign in with Apple, and in-app purchases via Google Play Billing and Apple Pay.',
+        'Published cross platform React Native healthcare app (Google Play and Apple App Store) with Firebase Auth, Firestore, and FCM, plus an admin panel. Guided onboarding into health courses, XP and streaks, achievement badges, Sign in with Apple, and in app purchases.',
       image: healthcareImg,
       tags: ['Healthcare', 'React Native', 'Firebase', 'Published'],
       featured: true,
-      badge: '⭐ Featured',
+      badge: 'Published',
       gradient: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)',
       accentColor: '#14b8a6',
     },
     {
+      title: 'Ishout',
+      description:
+        'Full stack platform for a UAE creative branding and digital marketing agency, covering frontend, backend, and content presentation. Live at ishout.ae.',
+      image: ishoutImg,
+      imageFit: 'cover',
+      tags: ['Agency Platform', 'Next.js', 'Full Stack'],
+      link: 'https://ishout.ae/',
+      featured: false,
+      gradient: 'linear-gradient(135deg, #831843 0%, #db2777 100%)',
+      accentColor: '#ec4899',
+    },
+    {
+      title: 'LiliHo',
+      description:
+        'AI guest communication platform for vacation rentals. Automates WhatsApp and other channels in 150+ languages with PMS integrations and a unified inbox for property teams.',
+      image: webAppImg,
+      imageFit: 'cover',
+      tags: ['AI / LLM', 'WhatsApp', 'Full Stack'],
+      link: 'https://liliho.com/',
+      featured: true,
+      badge: 'AI Platform',
+      gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%)',
+      accentColor: '#38bdf8',
+    },
+    {
+      title: 'AI Calling Bot',
+      description:
+        'Voice automation with RAG pipelines, vector search, STT/TTS, and LLM APIs for multi turn automated voice conversations. Live at ultranivo.com.',
+      image: codingImg,
+      imageFit: 'cover',
+      tags: ['AI', 'Python', 'RAG', 'Voice'],
+      link: 'https://ultranivo.com/',
+      featured: true,
+      badge: 'AI Project',
+      gradient: 'linear-gradient(135deg, #14532d 0%, #16a34a 100%)',
+      accentColor: '#22c55e',
+    },
+    {
+      title: 'Vumi',
+      description:
+        'Cross platform React Native social app with professional feed, short form reels, real time messaging, Stripe style checkout, authentication, and Firebase push notifications. Available on the App Store as Vumi Agent Central.',
+      image: healthcareImg,
+      tags: ['React Native', 'Node.js', 'Firebase', 'Stripe'],
+      featured: false,
+      gradient: 'linear-gradient(135deg, #312e81 0%, #6366f1 100%)',
+      accentColor: '#818cf8',
+    },
+    {
       title: 'Dentalic',
-      description: 'Dental management SaaS to streamline clinic operations—from patient scheduling to billing. Boost efficiency, improve patient care, and simplify administrative tasks.',
+      description: 'Dental management SaaS to streamline clinic operations from patient scheduling to billing. Boost efficiency, improve patient care, and simplify administrative tasks.',
       image: dentalicImg,
       tags: ['Digital Health', 'Web App', 'SaaS'],
       link: 'https://mongid.com/en/dentalic',
@@ -190,20 +280,31 @@ const Projects = () => {
       accentColor: '#64748b',
     },
     {
-      title: '360HR',
+      title: 'French Riviera Travel',
       description:
-        'B2B HR and recruiting SaaS—role-based dashboards for recruiters, HR, and candidates, with job postings, pipelines, interview scheduling, onboarding, attendance, and a career portal tying recruiting and HR ops into one system.',
-      image: hrImg,
-      tags: ['HR & SaaS', 'React', 'Node.js', 'Cloud'],
-      link: 'https://360hr.cloud/',
+        'Travel content platform with destination guides, attractions, blogs, and accommodation related content. Responsive pages and smoother navigation for discovery.',
+      image: reveriaImg,
+      tags: ['Travel & Tourism', 'Next.js'],
+      link: 'https://frenchriviera.travel/',
       featured: false,
-      gradient: 'linear-gradient(135deg, #1e40af 0%, #2563eb 100%)',
-      accentColor: '#3b82f6',
+      gradient: 'linear-gradient(135deg, #0c4a6e 0%, #155e75 100%)',
+      accentColor: '#0891b2',
+    },
+    {
+      title: 'Instant Custom Boxes',
+      description:
+        'Custom packaging e commerce with responsive sections for product categories, quote requests, and landing pages. Improved browsing, customization flows, and inquiry based ordering.',
+      image: instantBoxesImg,
+      tags: ['Packaging & E Commerce', 'React.js'],
+      link: 'https://www.instantcustomboxes.com/',
+      featured: false,
+      gradient: 'linear-gradient(135deg, #44403c 0%, #57534e 100%)',
+      accentColor: '#78716c',
     },
     {
       title: 'Bitrix24 Tasks & Projects',
       description:
-        'CRM-style modules—task management, collaboration, user roles, reporting, and workflow automation—with scalable admin and business interfaces for operational tracking.',
+        'CRM style modules for task management, collaboration, user roles, reporting, and workflow automation with scalable admin and business interfaces.',
       image: bitrixImg,
       tags: ['Task Management', 'Web Platform'],
       link: 'https://www.bitrix24.com/',
@@ -214,74 +315,13 @@ const Projects = () => {
     {
       title: 'T-Mobile',
       description:
-        'Real-time collaborative task management—live sync, multi-user support, and role-based access with React.js and Node.js; responsive UI and APIs for collaborative workflows.',
+        'Real time collaborative task management with live sync, multi user support, and role based access using React.js and Node.js.',
       image: tmobileImg,
       tags: ['Telecom & Digital', 'Enterprise'],
       link: 'https://www.t-mobile.com/',
       featured: false,
       gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
       accentColor: '#4338ca',
-    },
-    {
-      title: 'French Riviera Travel',
-      description:
-        'Travel content platform—destination guides, attractions, blogs, and accommodation-related content—with responsive pages and smoother navigation for discovery.',
-      image: reveriaImg,
-      tags: ['Travel & Tourism', 'Web Platform'],
-      link: 'https://frenchriviera.travel/',
-      featured: false,
-      gradient: 'linear-gradient(135deg, #0c4a6e 0%, #155e75 100%)',
-      accentColor: '#0891b2',
-    },
-    {
-      title: 'Instant Custom Boxes',
-      description:
-        'Custom packaging e-commerce—responsive sections for product categories, quote requests, and landing pages; improved browsing, customization flows, and inquiry-based ordering.',
-      image: instantBoxesImg,
-      tags: ['Packaging & E-Commerce', 'Web App'],
-      link: 'https://www.instantcustomboxes.com/',
-      featured: false,
-      gradient: 'linear-gradient(135deg, #44403c 0%, #57534e 100%)',
-      accentColor: '#78716c',
-    },
-  ]
-
-  const companyProjects = [
-    {
-      title: 'Entry Club',
-      description:
-        'Complete fitness management platform built for Saudi Arabia—streamline operations, delight members, and grow the business. Multi-tenant web and mobile with Next.js, NestJS, and React Native: member management, class scheduling, QR check-in, WhatsApp integration, multi-location support, and PDPL-compliant access.',
-      image: entryClubImg,
-      imageFit: 'cover',
-      tags: ['Fitness SaaS', 'Next.js', 'NestJS', 'React Native'],
-      featured: true,
-      badge: 'Company Project',
-      gradient: 'linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%)',
-      accentColor: '#818cf8',
-    },
-    {
-      title: 'Ishout',
-      description:
-        'Smarter campaigns, powered by AI—an influencer marketing platform where brands brief goals, audience, and deliverables in minutes, then Ishout AI matches the most relevant creators instantly. Campaign workflows, creator collaboration, analytics, and role-based access for brands activating at scale.',
-      image: ishoutImg,
-      imageFit: 'cover',
-      tags: ['Influencer Marketing', 'AI Matching', 'Next.js', 'SaaS'],
-      featured: true,
-      badge: 'Company Project',
-      gradient: 'linear-gradient(135deg, #831843 0%, #db2777 100%)',
-      accentColor: '#ec4899',
-    },
-    {
-      title: 'Tawabiq',
-      description:
-        'Complete real estate platform with three connected experiences: a public marketplace (search, favorites, map/geolocation), a broker management system (leads, appointments, commissions, transactions), and an enterprise admin panel with role-based dashboards, listing approvals, content moderation, reporting, and audit logs.',
-      image: tawabiqImg,
-      imageFit: 'cover',
-      tags: ['Real Estate', 'Next.js', 'NestJS', 'PostgreSQL'],
-      featured: true,
-      badge: 'Company Project',
-      gradient: 'linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)',
-      accentColor: '#0d9488',
     },
   ]
 
@@ -324,11 +364,34 @@ const Projects = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Selected work with live demos where available
+        Same showcase clients see on my Upwork profile, plus selected live work
       </motion.p>
 
-      <div className="projects-grid" style={{ ...gridStyle, marginTop: '60px' }}>
-        {liveProjects.map((project, index) => (
+      <motion.h3
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        style={{
+          fontSize: '1.85rem',
+          fontWeight: 700,
+          marginTop: '60px',
+          marginBottom: '12px',
+        }}
+      >
+        Upwork Portfolio
+      </motion.h3>
+
+      <motion.div
+        className="section-divider"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      />
+
+      <div className="projects-grid" style={gridStyle}>
+        {upworkProjects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} isMobile={isMobile} />
         ))}
       </div>
@@ -345,7 +408,7 @@ const Projects = () => {
           marginBottom: '12px',
         }}
       >
-        Company Projects
+        More Selected Work
       </motion.h3>
 
       <motion.div
@@ -363,11 +426,11 @@ const Projects = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        Production platforms delivered for clients—private deployments, no public URL
+        Additional projects from my CV with live demos where available
       </motion.p>
 
       <div className="projects-grid" style={gridStyle}>
-        {companyProjects.map((project, index) => (
+        {liveProjects.map((project, index) => (
           <ProjectCard key={project.title} project={project} index={index} isMobile={isMobile} />
         ))}
       </div>

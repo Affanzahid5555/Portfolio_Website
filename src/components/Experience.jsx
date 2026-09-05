@@ -11,31 +11,30 @@ const Experience = () => {
       location: 'Lahore, Pakistan · On-site',
       period: 'Oct 2025 – Present',
       description:
-        'Full-time software engineer building production web platforms for international business clients with React.js, Next.js, and Node.js—including microservices-based backends with NestJS and PostgreSQL on AWS, and direct client communication across time zones.',
+        'Own end to end delivery of full stack production web applications for business clients, architecting microservices based backends with NestJS and PostgreSQL and deploying to AWS alongside React.js and Next.js frontends.',
       achievements: [
-        'Built Entry Club—a multi-tenant fitness management platform for Saudi Arabia with QR check-in, WhatsApp, multi-location support, and PDPL-compliant access',
-        'Led Ishout—an AI-powered influencer marketing platform with campaign briefing, instant creator matching, and brand collaboration workflows',
-        'Delivered Tawabiq—a real estate platform with marketplace, broker, and admin portals (map search, geolocation, SSR, and enterprise moderation)',
-        'Develop and maintain full-stack web applications using React.js, Next.js, and Node.js for production-level business clients',
-        'Build responsive, component-driven interfaces with RESTful APIs, authentication, admin panels, role-based access control, and Stripe integrations',
-        'Accelerate delivery with AI-assisted tools (Claude Code, Cursor) while maintaining code quality through structured prompt engineering',
+        'Architect responsive, component driven interfaces backed by RESTful APIs, authentication, admin panels, role based access control, and Stripe payment integrations',
+        'Built Entry Club, a multi-tenant fitness management platform with QR check in, WhatsApp, multi location support, and PDPL compliant access',
+        'Led Ishout, an AI powered influencer marketing platform with campaign briefing, creator matching, and brand collaboration workflows',
+        'Delivered Tawabiq, a real estate platform with marketplace, broker, and admin portals including map search, geolocation, SSR, and enterprise moderation',
+        'Accelerate delivery with AI assisted tools (Claude Code, Cursor) while acting as primary client facing engineer across time zones',
       ],
-      technologies: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'Python', 'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Stripe'],
+      technologies: ['React.js', 'Next.js', 'Node.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'AWS', 'GCP', 'Stripe'],
       color: '#7c3aed',
     },
     {
       type: 'parttime',
       title: 'MERN Stack Developer',
       company: '360HR',
-      location: 'Remote · Part-time',
+      location: 'Remote · Part-time / Contract',
       period: 'Aug 2023 – Jan 2026',
       description:
-        'Led end-to-end development of an enterprise job portal and applicant tracking system (ATS) using the MERN stack—high-performance React.js interfaces, Node.js REST APIs, and MongoDB optimization for international clients.',
+        'Own the end to end architecture and development of an enterprise job portal and applicant tracking system (ATS) on the MERN stack, covering job posting, candidate search, applicant pipelines, and recruiter analytics.',
       achievements: [
-        'Built job posting, candidate search, applicant pipelines, and recruiter analytics dashboards with high-performance React.js UIs',
-        'Designed RESTful APIs with JWT-based role-based access for admins, recruiters, and applicants',
-        'Optimized MongoDB schemas, aggregation pipelines, and indexing for fast search across large candidate datasets',
-        'Integrated email notifications, resume uploads, and reporting tools; led sprint demos and agile delivery in production',
+        'Design and secure RESTful APIs with Node.js and Express.js for job workflows, applications, and notifications',
+        'Implement JWT based role based access across admin, recruiter, and applicant roles',
+        'Engineer performant MongoDB schemas, aggregation pipelines, and indexing for fast search across large candidate datasets',
+        'Integrate email notifications, resume uploads, and reporting; lead requirement discussions and sprint demos with international stakeholders',
       ],
       technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs'],
       color: '#2563eb',
@@ -47,12 +46,11 @@ const Experience = () => {
       location: 'Lahore, Pakistan · On-site',
       period: 'Jun 2024 – Oct 2025',
       description:
-        'Developed and maintained a production React Native social app with location-based discovery, real-time chat, friend management, user profiles, and event workflows.',
+        'Owned development of a production React Native social app end to end, delivering location based discovery, real time chat, friend management, user profiles, and event workflows to a live user base.',
       achievements: [
-        'Built location-based discovery so users explore nearby events, profiles, and content through proximity-based recommendations',
-        'Implemented a scalable real-time chat module with Socket.io—reliable delivery, presence, and low-latency messaging',
-        'Engineered the backend with Node.js and MongoDB, including a reels-based jobs feature for discovering and applying to opportunities through short-form video feeds',
-        'Built and integrated RESTful APIs for mobile features, user data, events, and real-time communication',
+        'Architected a scalable real time chat module with Socket.io for reliable delivery, presence tracking, and low latency messaging',
+        'Built and maintained the Node.js and MongoDB backend, including a reels based discovery feature for browsing and applying to jobs',
+        'Integrated RESTful APIs powering core app features, user data, events, and real time communication',
       ],
       technologies: ['React Native', 'React', 'Node.js', 'Socket.io', 'REST APIs', 'MongoDB'],
       color: '#3b82f6',
@@ -91,7 +89,7 @@ const Experience = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        My professional journey and the projects I've worked on
+        Professional roles matching my CV and Upwork profile
       </motion.p>
 
       <div
@@ -102,7 +100,6 @@ const Experience = () => {
           marginTop: '60px',
         }}
       >
-        {/* Timeline line */}
         <motion.div
           className="experience-timeline-line"
           initial={{ scaleY: 0 }}
@@ -131,7 +128,6 @@ const Experience = () => {
               transition={{ delay: index * 0.15, duration: 0.7 }}
               style={{ position: 'relative' }}
             >
-              {/* Timeline dot */}
               <motion.div
                 className="experience-dot"
                 whileInView={{ scale: [0, 1.3, 1] }}
@@ -214,7 +210,6 @@ const Experience = () => {
                   {exp.description}
                 </p>
 
-                {/* Achievements */}
                 <div style={{ marginBottom: '22px' }}>
                   <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '12px', color: 'var(--light)' }}>
                     Key Achievements
@@ -236,7 +231,6 @@ const Experience = () => {
                   </ul>
                 </div>
 
-                {/* Tech tags */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                   {exp.technologies.map((tech, i) => (
                     <motion.span
