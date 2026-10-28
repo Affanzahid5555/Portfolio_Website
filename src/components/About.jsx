@@ -1,68 +1,50 @@
 import { motion } from 'framer-motion'
+import { FiBox, FiCpu, FiSmartphone } from 'react-icons/fi'
 
-const fadeUp = {
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: false, amount: 0.2 },
-  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-}
+const capabilities = [
+  { number: '01', icon: <FiBox />, title: 'Full stack development', text: 'Scalable frontends, reliable APIs, data models, payments, role-based access, and the details that make software production-ready.' },
+  { number: '02', icon: <FiSmartphone />, title: 'Mobile delivery', text: 'Cross-platform apps shaped around real user journeys, with store releases, cloud services, notifications, and smooth everyday performance.' },
+  { number: '03', icon: <FiCpu />, title: 'AI & automation', text: 'Useful AI features, voice workflows, third-party integrations, and operational automation built around the product—not the hype.' },
+]
 
-const About = () => {
-  const skills = [
-    'React', 'Next.js', 'React Native', 'TypeScript', 'Node.js', 'NestJS',
-    'PostgreSQL', 'MongoDB', 'Firebase', 'AWS', 'OpenAI API', 'REST APIs',
-  ]
+const skills = [
+  'React', 'Next.js', 'React Native', 'TypeScript', 'Node.js', 'Express', 'NestJS', 'FastAPI',
+  'MongoDB', 'PostgreSQL', 'Firebase', 'AWS', 'Docker', 'REST APIs', 'Microservices', 'Payment Integrations',
+]
 
-  return (
-    <section id="about" className="bc-section">
-      <motion.h2 className="bc-section-label" {...fadeUp}>
-        About
+const About = () => (
+  <section id="about" className="content-section section-shell">
+    <div className="section-heading">
+      <span className="section-index">01 / About</span>
+      <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.65 }}>
+        Engineering the whole product,<br /><em>not just the screens.</em>
       </motion.h2>
+    </div>
 
-      <motion.div className="bc-prose" {...fadeUp}>
-        <p>
-          Hi, I&apos;m Affan, a full stack developer based in Lahore. I like shipping
-          clean, scalable products end to end: from requirement gathering through
-          production. Most of my work sits at the intersection of solid engineering
-          and clear UI, with a focus on performance, SEO, and maintainable code.
-        </p>
-        <p>
-          Currently I&apos;m a Software Engineer at{' '}
-          <strong>Techtimize</strong>, building production React, Next.js, and NestJS
-          platforms for international clients, including multi tenant SaaS,
-          payments, and AI assisted workflows. Previously I built a production React
-          Native social app at <strong>Euphoria XR</strong> and led MERN development
-          for the B2B recruiting platform at <strong>360HR</strong>.
-        </p>
-        <p>
-          On Upwork I showcase work like{' '}
-          <a href="#projects">Entry Club</a> (multi tenant fitness SaaS),{' '}
-          <a href="#projects">Tawabiq</a> (real estate marketplace), and{' '}
-          <a href="#projects">360HR</a>, plus published apps and AI products. Open to
-          contracts at 30+ hrs/week.
-        </p>
-        <p className="bc-muted">
-          Education: B.S. Computer Science, University of Lahore (2020 to 2024).
-          Certifications: Professional React Native & Node.js (2023), Full Stack Web
-          & Mobile Development (2022).
-        </p>
-      </motion.div>
+    <div className="about-intro">
+      <p className="about-lead">I&apos;m Affan, a full stack developer building polished web, mobile, and AI experiences people can trust and enjoy using.</p>
+      <div className="about-copy">
+        <p>My work spans web platforms, mobile apps, AI communication tools, B2B SaaS, payments, and enterprise workflows. I&apos;m comfortable moving from requirements and architecture to the final release—and staying close to users, designers, and clients along the way.</p>
+        <p>I care about clear interfaces, thoughtful systems, fast feedback loops, and measurable improvements. The result is software that looks sharp and holds up under real-world use.</p>
+      </div>
+    </div>
 
-      <ul className="bc-skill-cloud">
-        {skills.map((skill, i) => (
-          <motion.li
-            key={skill}
-            initial={{ opacity: 0, y: 14, scale: 0.94 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ delay: i * 0.04, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {skill}
-          </motion.li>
-        ))}
-      </ul>
-    </section>
-  )
-}
+    <div className="capability-grid">
+      {capabilities.map((item, index) => (
+        <motion.article className="capability-card" key={item.title} initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.08, duration: 0.55 }}>
+          <div className="capability-top"><span>{item.number}</span>{item.icon}</div>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </motion.article>
+      ))}
+    </div>
+
+    <div className="skill-marquee" aria-label={`Core skills: ${skills.join(', ')}`}>
+      <div className="skill-track">
+        {[...skills, ...skills].map((skill, index) => <span key={`${skill}-${index}`}>{skill}<i aria-hidden>✦</i></span>)}
+      </div>
+    </div>
+  </section>
+)
 
 export default About

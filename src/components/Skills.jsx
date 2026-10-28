@@ -109,7 +109,7 @@ const Skills = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Technologies I use on Upwork and in production: React, Next.js, React Native, Node.js, AI, and more
+        Technologies I use to build production web, mobile, and AI products: React, Next.js, React Native, Node.js, and more
       </motion.p>
 
       <motion.div

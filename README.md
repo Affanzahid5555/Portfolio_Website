@@ -1,15 +1,15 @@
 # Portfolio Website
 
-A modern one-page portfolio built with React, Vite, and Framer Motion. Clean Brittany Chiang–inspired layout, light/dark theme, scroll animations, and a fully responsive design.
+A modern one-page portfolio built with React, Vite, and Framer Motion. It presents full stack web, mobile, and AI work through a responsive editorial layout.
 
 ## Features
 
-- Sticky intro sidebar with in-page navigation
+- Fixed navigation with active-section tracking
 - Smooth scroll to About, Experience, Projects, and Contact
 - Light and dark theme toggle
 - Framer Motion scroll animations
 - Cursor spotlight on desktop
-- Upwork-aligned bio, skills, experience, and projects
+- Project case studies with production screenshots and external links
 - Fully responsive (desktop, tablet, mobile)
 
 ## Installation
@@ -42,8 +42,6 @@ npm run preview
 2. On push to `main`, the workflow builds the app and deploys the `dist/` folder.
 3. One-time setup: repo **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-If the page was blank before, GitHub Pages was serving source files instead of the Vite build. Deploying `dist/` fixes that.
-
 ## Customization
 
 Content lives in these files:
@@ -54,7 +52,6 @@ Content lives in these files:
 - **Projects**: `src/components/Projects.jsx`
 - **Contact**: `src/components/Contact.jsx`
 - **Theme / colors**: `src/context/ThemeContext.jsx` and `src/index.css`
-- **Resume PDF**: `src/assets/Affan_Resume.pdf` (update `src/cvAsset.js` cache bust after replacing)
 
 ## Technologies
 
@@ -66,14 +63,14 @@ Content lives in these files:
 
 ## Sections
 
-1. **Sidebar**: Name, title, tagline, nav, socials, résumé, theme toggle
+1. **Navigation**: Wordmark, section links, and theme toggle
 2. **About**: Bio, education, skill chips
 3. **Experience**: Work history with tech tags
 4. **Projects**: Selected work with images and links
-5. **Contact**: Email and Upwork
+5. **Contact**: Email, WhatsApp, and LinkedIn
 
 ## Notes
 
 - Content is hardcoded for a simple static portfolio
-- Contact is link-based (email / Upwork); no backend form
-- Replace the résumé PDF and project media as needed
+- Contact is link-based; no backend form
+- Replace project media in `src/assets/project-screens/` as needed

@@ -50,7 +50,7 @@ const Certifications = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Credentials also listed on my Upwork profile
+        Professional credentials in full stack web and mobile development
       </motion.p>
 
       <div

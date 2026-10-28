@@ -37,7 +37,7 @@ const CursorSpotlight = () => {
     <div
       className={`bc-cursor-spotlight${visible ? ' is-visible' : ''}`}
       style={{
-        background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, rgba(15, 23, 42, 0.12), transparent 40%)`,
+        background: `radial-gradient(640px circle at ${pos.x}px ${pos.y}px, rgba(var(--spotlight-rgb), 0.1), transparent 42%)`,
       }}
       aria-hidden
     />

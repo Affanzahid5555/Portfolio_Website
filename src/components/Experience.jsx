@@ -1,97 +1,62 @@
 import { motion } from 'framer-motion'
-import { CV_CACHE_BUST, CV_URL } from '../cvAsset'
+import { FiArrowUpRight } from 'react-icons/fi'
 
-const jobs = [
+const roles = [
   {
-    period: '2025 to Present',
-    title: 'Software Engineer',
+    period: 'Oct 2025 — Sep 2026',
     company: 'Techtimize',
-    href: '#',
-    description:
-      'Own end to end delivery of full stack production web apps for business clients. NestJS and PostgreSQL microservices on AWS with React and Next.js frontends, auth, admin panels, RBAC, and Stripe. Primary client facing engineer across time zones.',
-    tech: ['React', 'Next.js', 'NestJS', 'TypeScript', 'PostgreSQL', 'AWS', 'Stripe'],
+    title: 'Full Stack Developer',
+    summary: 'Delivered production web and mobile features, designed clear microservice-style APIs, and integrated Meta and Google services for client products.',
+    impact: '30% faster feature delivery',
+    tags: ['Web & Mobile', 'API Design', 'Microservices', 'Client Delivery'],
   },
   {
-    period: '2023 to 2026',
-    title: 'MERN Stack Developer',
-    company: '360HR',
-    href: 'https://360hr.io/',
-    description:
-      'Architected an enterprise job portal and ATS on the MERN stack: job posting, candidate search, pipelines, recruiter analytics, JWT RBAC, and MongoDB performance work for large datasets.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-  },
-  {
-    period: '2024 to 2025',
-    title: 'Software Engineer',
+    period: 'Jun 2024 — Oct 2025',
     company: 'Euphoria XR',
-    href: '#',
-    description:
-      'Owned a production React Native social app with location discovery, real time Socket.io chat, profiles, events, and a Node/MongoDB backend including reels based job discovery.',
-    tech: ['React Native', 'Node.js', 'Socket.io', 'MongoDB'],
+    title: 'Full Stack Developer',
+    summary: 'Shipped cross-platform products to both major app stores, built payment and cloud integrations, and created real-time AI voice experiences.',
+    impact: 'Load time cut to 1.5s',
+    tags: ['React Native', 'Firebase', 'Twilio', 'AWS Polly'],
+  },
+  {
+    period: 'Aug 2024 — Jan 2026',
+    company: '360HR',
+    title: 'Full Stack Developer · Part-Time',
+    summary: 'Built a B2B recruitment platform with hiring pipelines, analytics, secure role-based APIs, compliance integrations, and billing workflows.',
+    impact: 'Candidate search cut to 0.8s',
+    tags: ['React', 'Node.js', 'MongoDB', 'RBAC'],
+    link: 'https://360hr.io/',
   },
 ]
 
-const Experience = () => {
-  return (
-    <section id="experience" className="bc-section">
-      <motion.h2
-        className="bc-section-label"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        Experience
-      </motion.h2>
+const Experience = () => (
+  <section id="experience" className="content-section section-shell">
+    <div className="section-heading split-heading">
+      <div>
+        <span className="section-index">02 / Experience</span>
+        <h2>Built in teams.<br /><em>Proven in production.</em></h2>
+      </div>
+    </div>
 
-      <ol className="bc-exp-list">
-        {jobs.map((job, index) => (
-          <motion.li
-            key={job.company + job.period}
-            initial={{ opacity: 0, y: 32, x: -8 }}
-            whileInView={{ opacity: 1, y: 0, x: 0 }}
-            viewport={{ once: false, amount: 0.25 }}
-            transition={{ delay: index * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <a
-              className="bc-exp-card"
-              href={job.href === '#' ? undefined : job.href}
-              target={job.href !== '#' ? '_blank' : undefined}
-              rel={job.href !== '#' ? 'noopener noreferrer' : undefined}
-              onClick={job.href === '#' ? (e) => e.preventDefault() : undefined}
-            >
-              <div className="bc-exp-period">{job.period}</div>
-              <div className="bc-exp-body">
-                <h3 className="bc-exp-title">
-                  {job.title} · <span>{job.company}</span>
-                </h3>
-                <p>{job.description}</p>
-                <ul className="bc-tech-list">
-                  {job.tech.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-              </div>
-            </a>
-          </motion.li>
-        ))}
-      </ol>
-
-      <motion.a
-        className="bc-text-link"
-        href={`${CV_URL}?v=${CV_CACHE_BUST}`}
-        download="Affan_Zahid_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.45 }}
-      >
-        View Full Résumé →
-      </motion.a>
-    </section>
-  )
-}
+    <div className="experience-list">
+      {roles.map((role, index) => {
+        const Card = role.link ? motion.a : motion.article
+        const linkProps = role.link ? { href: role.link, target: '_blank', rel: 'noopener noreferrer' } : {}
+        return (
+          <Card className="experience-card" key={role.company} {...linkProps} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.07, duration: 0.55 }}>
+            <div className="experience-meta"><span className="experience-number">0{index + 1}</span><span>{role.period}</span></div>
+            <div className="experience-main">
+              <h3>{role.company}{role.link && <FiArrowUpRight />}</h3>
+              <span className="experience-title">{role.title}</span>
+              <p>{role.summary}</p>
+              <div className="tag-list">{role.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+            </div>
+            <div className="impact-pill">{role.impact}</div>
+          </Card>
+        )
+      })}
+    </div>
+  </section>
+)
 
 export default Experience

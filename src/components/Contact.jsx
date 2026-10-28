@@ -1,52 +1,27 @@
 import { motion } from 'framer-motion'
+import { FiArrowUpRight, FiLinkedin, FiMail } from 'react-icons/fi'
+import { SiWhatsapp } from 'react-icons/si'
 
-const Contact = () => {
-  return (
-    <section id="contact" className="bc-section bc-section-last">
-      <motion.h2
-        className="bc-section-label"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.4 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        Contact
+const Contact = () => (
+  <section id="contact" className="contact-section">
+    <div className="section-shell contact-inner">
+      <span className="section-index">04 / Let&apos;s build</span>
+      <motion.h2 initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.65 }}>
+        HAVE A PRODUCT<br />THAT SHOULD <em>EXIST?</em>
       </motion.h2>
+      <div className="contact-row">
+        <p>Bring the ambitious brief. I&apos;ll bring product thinking, engineering discipline, and the energy to ship it properly.</p>
+        <a className="contact-button" href="mailto:zahidaffan72@gmail.com"><span>Start a project</span><FiArrowUpRight /></a>
+      </div>
 
-      <motion.div
-        className="bc-prose"
-        initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.25 }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <p>
-          Looking for a full stack developer for web, mobile, or AI features?
-          I&apos;m available for Upwork contracts and freelance work (30+ hrs/week).
-        </p>
-        <p>
-          Email me at{' '}
-          <a href="mailto:zahidaffan72@gmail.com">zahidaffan72@gmail.com</a>
-          {' '}or hire me on{' '}
-          <a
-            href="https://www.upwork.com/freelancers/~01dabd00704ad7f10b?mp_source=share"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Upwork
-          </a>
-          .
-        </p>
-      </motion.div>
-
-      <footer className="bc-footer">
-        <p>
-          Built with React & Framer Motion. Inspired by clean, content-first portfolios.
-          Designed for clients who want clarity over clutter.
-        </p>
+      <footer className="site-footer">
+        <a href="mailto:zahidaffan72@gmail.com"><FiMail /> Email</a>
+        <a href="https://wa.me/923314906039" target="_blank" rel="noopener noreferrer"><SiWhatsapp /> WhatsApp</a>
+        <a href="https://www.linkedin.com/in/affan-zahid" target="_blank" rel="noopener noreferrer"><FiLinkedin /> LinkedIn</a>
+        <span>© {new Date().getFullYear()} Affan Zahid</span>
       </footer>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 export default Contact
