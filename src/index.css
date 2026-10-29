@@ -199,7 +199,10 @@ img { max-width: 100%; display: block; }
 .project-title-row h3 { font: 600 clamp(1.35rem, 2.5vw, 2rem) 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
 .project-title-row svg { font-size: 1.25rem; transition: transform .2s ease; }
 .project-card:hover .project-title-row svg { transform: translate(3px, -3px); }
-.project-content > p { min-height: 72px; margin-top: 13px; color: var(--muted); font-size: .88rem; }
+.project-summary { min-height: 152px; margin-top: 16px; display: grid; gap: 12px; }
+.project-summary div { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: start; }
+.project-summary dt { padding-top: 2px; color: var(--orange-dark); font-size: .65rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.project-summary dd { color: var(--muted); font-size: .84rem; line-height: 1.55; }
 
 .contact-section { background: var(--ink); color: var(--bg); }
 .contact-inner { padding: clamp(90px, 11vw, 150px) 0 34px; }
@@ -222,12 +225,12 @@ img { max-width: 100%; display: block; }
   .about-intro { grid-template-columns: 1fr; gap: 30px; }
   .experience-card { grid-template-columns: .7fr 1.8fr; }
   .impact-pill { grid-column: 2; width: fit-content; }
-  .project-content > p { min-height: 92px; }
+  .project-summary { min-height: 174px; }
 }
 
 @media (max-width: 900px) {
   .project-grid { grid-template-columns: 1fr; }
-  .project-content > p { min-height: 0; }
+  .project-summary { min-height: 0; }
 }
 
 @media (max-width: 800px) {
@@ -253,7 +256,7 @@ img { max-width: 100%; display: block; }
   .experience-meta { flex-direction: row; gap: 16px; }
   .impact-pill { grid-column: 1; }
   .project-grid { grid-template-columns: 1fr; }
-  .project-content > p { min-height: 0; }
+  .project-summary { min-height: 0; }
   .contact-row { align-items: flex-start; flex-direction: column; margin-bottom: 76px; }
   .contact-button { width: 150px; height: 150px; }
   .site-footer span { width: 100%; margin-left: 0; }
@@ -269,6 +272,7 @@ img { max-width: 100%; display: block; }
   .project-card { padding: 8px; border-radius: 20px; }
   .project-visual { border-radius: 14px; }
   .project-content { padding: 18px 8px 12px; }
+  .project-summary div { grid-template-columns: 1fr; gap: 3px; }
   .project-type-chip { right: 9px; bottom: 9px; max-width: calc(100% - 18px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .contact-inner h2 { font-size: 13vw; }
 }
