@@ -19,6 +19,7 @@ import siteStreamSites from '../assets/project-screens/sitestream-sites.png'
 import betterManRecovery from '../assets/project-screens/betterman-recovery.png'
 import betterManFitness from '../assets/project-screens/betterman-fitness.png'
 import betterManCourses from '../assets/project-screens/betterman-courses.png'
+import frenchRivieraImage from '../assets/project-screens/french-riviera-travel.jpg'
 
 const projects = [
   {
@@ -72,6 +73,16 @@ const projects = [
       { src: betterManCourses, alt: 'BetterMan personal development course screen' },
     ],
     featured: true,
+  },
+  {
+    title: 'French Riviera Travel',
+    type: 'Travel & tourism platform',
+    built: 'Built responsive destination pages, reusable UI components, and structured content sections for travel guides, experiences, accommodation, and editorial content across the French Riviera.',
+    outcome: 'Created a fast, SEO-friendly browsing experience that helps travelers discover South of France destinations smoothly across desktop and mobile.',
+    tags: ['Responsive Web', 'SEO', 'Content Platform', 'Travel'],
+    link: 'https://frenchriviera.travel/',
+    image: frenchRivieraImage,
+    imageAlt: 'French Riviera Travel destination platform preview',
   },
   {
     title: 'EntryClub',

@@ -111,6 +111,7 @@ img { max-width: 100%; display: block; }
 
 .scroll-progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 1000; transform-origin: left; background: var(--orange); }
 .site-header { position: fixed; top: 20px; left: 0; right: 0; z-index: 900; pointer-events: none; }
+.site-header.is-hidden .site-nav { pointer-events: none; }
 .site-nav {
   width: min(1080px, calc(100% - 32px));
   min-height: 64px;
