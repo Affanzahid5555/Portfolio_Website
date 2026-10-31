@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <>
       <motion.div className="scroll-progress" style={{ scaleX }} aria-hidden />
-      <header className="site-header">
+      <motion.header className="site-header" initial={{ opacity: 0, y: -70 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, type: 'spring', stiffness: 90, damping: 18 }}>
         <nav className="site-nav" aria-label="Primary navigation">
           <a className="wordmark" href="#home" aria-label="Affan Zahid, home">
             AZ<span>.</span>
@@ -54,7 +54,7 @@ const Sidebar = () => {
             </button>
           </div>
         </nav>
-      </header>
+      </motion.header>
     </>
   )
 }

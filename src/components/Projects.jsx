@@ -13,6 +13,12 @@ import ishoutImage from '../assets/project-screens/ishout.png'
 import entryClubImage from '../assets/images/assets/entry-club.png'
 import hrImage from '../assets/images/assets/image-copy.png'
 import gensaiImage from '../assets/project-screens/gensai.png'
+import siteStreamBrand from '../assets/project-screens/sitestream-brand.png'
+import siteStreamEvents from '../assets/project-screens/sitestream-events.png'
+import siteStreamSites from '../assets/project-screens/sitestream-sites.png'
+import betterManRecovery from '../assets/project-screens/betterman-recovery.png'
+import betterManFitness from '../assets/project-screens/betterman-fitness.png'
+import betterManCourses from '../assets/project-screens/betterman-courses.png'
 
 const projects = [
   {
@@ -38,6 +44,34 @@ const projects = [
     outcome: 'Lets customers browse 20,000+ grocery and home products and move from search to scheduled delivery in one app.',
     tags: ['Mobile Commerce', 'iOS', 'Logistics'],
     link: 'https://apps.apple.com/au/app/asian-grocer-online/id6749350863', image: asianGrocerImage, featured: true,
+  },
+  {
+    title: 'SiteStream',
+    type: 'Mobile security monitoring',
+    built: 'Built a mobile monitoring experience for live camera access, recorded motion events, clip management, two-way audio, and switching between multiple security sites.',
+    outcome: 'Gives teams remote visibility and control over solar-powered mobile security skids across construction sites, work zones, and temporary locations.',
+    tags: ['Mobile', 'Live Video', 'Cloud Storage', 'Multi-Site'],
+    link: 'https://play.google.com/store/apps/details?id=com.redskyeng.sitestream&hl=en',
+    images: [
+      { src: siteStreamBrand, alt: 'SiteStream mobile app branding' },
+      { src: siteStreamEvents, alt: 'SiteStream recorded motion event screen' },
+      { src: siteStreamSites, alt: 'SiteStream multi-site management screen' },
+    ],
+    featured: true,
+  },
+  {
+    title: 'BetterMan',
+    type: 'Men’s health & habit app',
+    built: 'Built a personal-development experience around daily habits and streaks, guided breathing and meditation, fitness routines, structured courses, and progress milestones.',
+    outcome: 'Helps men build healthier routines and mindset through practical recovery tools, coaching content, and consistent progress tracking in one mobile app.',
+    tags: ['Health & Fitness', 'Habit Tracking', 'Courses', 'Mobile'],
+    link: 'https://play.google.com/store/apps/details?id=com.naturaljackson.betterman&hl=en',
+    images: [
+      { src: betterManRecovery, alt: 'BetterMan recovery streak and support screen' },
+      { src: betterManFitness, alt: 'BetterMan guided fitness program screen' },
+      { src: betterManCourses, alt: 'BetterMan personal development course screen' },
+    ],
+    featured: true,
   },
   {
     title: 'EntryClub',
@@ -137,13 +171,19 @@ const Projects = () => (
         const domain = project.link ? new URL(project.link).hostname.replace('www.', '') : 'Private product case study'
         const linkProps = project.link ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' } : {}
         return (
-          <Card className={`project-card ${project.featured ? 'project-featured' : ''} ${project.link ? '' : 'project-card-static'}`} {...linkProps} key={project.title} initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ delay: Math.min(index * 0.04, 0.2), duration: 0.55 }}>
+          <Card className={`project-card ${project.featured ? 'project-featured' : ''} ${project.link ? '' : 'project-card-static'}`} {...linkProps} key={project.title} initial={{ opacity: 0, y: 70, x: index % 2 === 0 ? -28 : 28, scale: 0.94 }} whileInView={{ opacity: 1, y: 0, x: 0, scale: 1 }} whileHover={{ y: -8 }} viewport={{ once: true, amount: 0.12 }} transition={{ delay: Math.min(index * 0.035, 0.18), type: 'spring', stiffness: 72, damping: 17 }}>
             <div className="project-visual">
               <div className="browser-bar" aria-hidden>
                 <span className="browser-dots"><i /><i /><i /></span>
                 <span className="browser-domain">{domain}</span>
               </div>
-              <img src={project.image} alt={project.imageAlt || `${project.title} website preview`} loading="lazy" />
+              {project.images ? (
+                <div className="project-gallery">
+                  {project.images.map((image) => <img src={image.src} alt={image.alt} loading="lazy" key={image.src} />)}
+                </div>
+              ) : (
+                <img src={project.image} alt={project.imageAlt || `${project.title} website preview`} loading="lazy" />
+              )}
               <span className="project-type-chip">{project.type}</span>
             </div>
             <div className="project-content">

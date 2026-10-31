@@ -9,10 +9,10 @@ const Contact = () => (
       <motion.h2 initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.65 }}>
         HAVE A PRODUCT<br />THAT SHOULD <em>EXIST?</em>
       </motion.h2>
-      <div className="contact-row">
+      <motion.div className="contact-row" initial={{ opacity: 0, y: 48 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ type: 'spring', stiffness: 76, damping: 17 }}>
         <p>Bring the ambitious brief. I&apos;ll bring product thinking, engineering discipline, and the energy to ship it properly.</p>
-        <a className="contact-button" href="mailto:zahidaffan72@gmail.com"><span>Start a project</span><FiArrowUpRight /></a>
-      </div>
+        <motion.a className="contact-button" href="mailto:zahidaffan72@gmail.com" whileHover={{ rotate: -6, scale: 1.06 }} whileTap={{ scale: 0.96 }}><span>Start a project</span><FiArrowUpRight /></motion.a>
+      </motion.div>
 
       <footer className="site-footer">
         <a href="mailto:zahidaffan72@gmail.com"><FiMail /> Email</a>

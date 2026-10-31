@@ -43,7 +43,7 @@ const Experience = () => (
         const Card = role.link ? motion.a : motion.article
         const linkProps = role.link ? { href: role.link, target: '_blank', rel: 'noopener noreferrer' } : {}
         return (
-          <Card className="experience-card" key={role.company} {...linkProps} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.07, duration: 0.55 }}>
+          <Card className="experience-card" key={role.company} {...linkProps} initial={{ opacity: 0, x: index % 2 === 0 ? -90 : 90, scale: 0.96 }} whileInView={{ opacity: 1, x: 0, scale: 1 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.08, type: 'spring', stiffness: 78, damping: 17 }}>
             <div className="experience-meta"><span className="experience-number">0{index + 1}</span><span>{role.period}</span></div>
             <div className="experience-main">
               <h3>{role.company}{role.link && <FiArrowUpRight />}</h3>

@@ -21,17 +21,17 @@ const About = () => (
       </motion.h2>
     </div>
 
-    <div className="about-intro">
-      <p className="about-lead">I&apos;m Affan, a full stack developer building polished web, mobile, and AI experiences people can trust and enjoy using.</p>
-      <div className="about-copy">
+    <motion.div className="about-intro" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}>
+      <motion.p className="about-lead" variants={{ hidden: { opacity: 0, x: -48 }, visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 80, damping: 17 } } }}>I&apos;m Affan, a full stack developer building polished web, mobile, and AI experiences people can trust and enjoy using.</motion.p>
+      <motion.div className="about-copy" variants={{ hidden: { opacity: 0, x: 48 }, visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 80, damping: 17 } } }}>
         <p>My work spans web platforms, mobile apps, AI communication tools, B2B SaaS, payments, and enterprise workflows. I&apos;m comfortable moving from requirements and architecture to the final release—and staying close to users, designers, and clients along the way.</p>
         <p>I care about clear interfaces, thoughtful systems, fast feedback loops, and measurable improvements. The result is software that looks sharp and holds up under real-world use.</p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
 
     <div className="capability-grid">
       {capabilities.map((item, index) => (
-        <motion.article className="capability-card" key={item.title} initial={{ opacity: 0, y: 34 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ delay: index * 0.08, duration: 0.55 }}>
+        <motion.article className="capability-card" key={item.title} initial={{ opacity: 0, y: 54, scale: 0.9, rotate: index - 1 }} whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }} whileHover={{ y: -8 }} viewport={{ once: true, amount: 0.22 }} transition={{ delay: index * 0.09, type: 'spring', stiffness: 80, damping: 16 }}>
           <div className="capability-top"><span>{item.number}</span>{item.icon}</div>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
@@ -39,11 +39,11 @@ const About = () => (
       ))}
     </div>
 
-    <div className="skill-marquee" aria-label={`Core skills: ${skills.join(', ')}`}>
+    <motion.div className="skill-marquee" aria-label={`Core skills: ${skills.join(', ')}`} initial={{ opacity: 0, scaleX: 0.82 }} whileInView={{ opacity: 1, scaleX: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}>
       <div className="skill-track">
         {[...skills, ...skills].map((skill, index) => <span key={`${skill}-${index}`}>{skill}<i aria-hidden>✦</i></span>)}
       </div>
-    </div>
+    </motion.div>
   </section>
 )
 
